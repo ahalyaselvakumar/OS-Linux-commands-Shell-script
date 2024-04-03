@@ -1,5 +1,5 @@
-Name: SURYAMALARV
-Ref no: 212223230224
+Name: AHALYA S
+Ref no: 212223230006
 ## OS-Linux-commands-Shell-scripting
 Operating systems Lab exercise
 
@@ -332,6 +332,7 @@ sed -n -e '1,5p' file23
 1005 | Sam | 5000 | HR
 ```
 sed -n -e '2,/Joe/p' file23
+
 ## OUTPUT
 ```
 1001 | Ram | 10000 | HR
@@ -389,7 +390,7 @@ seq 2 | sed '2i hello'
 hello
 2
 seq 10 | sed '2,9c hello'
-## OUTPUT
+##OUTPUT
 1 hello 10
 
 sed -n '2,4{s/^/$/;p}' file23
@@ -653,12 +654,13 @@ cat psswdperm.sh
  fi
 ./psswdperm.sh
 
-OUTPUT
-
+## OUTPUT
+```
 You are the owner of the /etc/passwd file
 check if with file location
+```
 cat>ifnested.sh
-
+```
  \#!/bin/bash
  if [ -e $HOME ]
  then
@@ -677,8 +679,9 @@ cat>ifnested.sh
  echo “Sorry, the object does not exist”
  fi
  ^d
+```
 cat ifnested.sh
-
+```
  \#!/bin/bash
  if [ -e $HOME ]
  then
@@ -697,13 +700,15 @@ cat ifnested.sh
  echo “Sorry, the object does not exist”
  fi
 ./ifnested.sh
-
-OUTPUT
+```
+## OUTPUT
+```
 /root The object exists, is it a file?
 No,/root it is not a file!
 using numeric test comparisons
+```
 cat > iftest.sh
-
+```
  \#!/bin/bash
  val1=10
  val2=11
@@ -718,8 +723,9 @@ cat > iftest.sh
  echo “The values are different”
  fi
  ^d
+```
 cat iftest.sh
-
+```
  \#!/bin/bash
  val1=10
  val2=11
@@ -734,13 +740,16 @@ cat iftest.sh
  echo “The values are different”
  fi
 $ chmod 755 iftest.sh $ ./iftest.sh
+```
 
-OUTPUT
+## OUTPUT
+```
 “The test value 10 is greater than 5”
 “The values are different”
+```
 check if a file
 cat > ifnested.sh
-
+```
  \#!/bin/bash
  if [ -e $HOME ]
  then
@@ -761,8 +770,9 @@ cat > ifnested.sh
  echo “Sorry, the object does not exist”
  fi
  ^d
+```
 cat ifnested.sh
-
+```
  \#!/bin/bash
  if [ -e $HOME ]
  then
@@ -781,13 +791,16 @@ cat ifnested.sh
  echo “Sorry, the object does not exist”
  fi
 $ chmod 755 ifnested.sh $ ./ifnested.sh
+```
 
-OUTPUT
+## OUTPUT
+```
 “/root The object exists, is it a file?”
 “No,/root it is not a file!”
 looking for a possible value using elif
+```
 cat elifcheck.sh
-
+```
  \#!/bin/bash
  if [ $USER = Ram ]
  then
@@ -809,8 +822,9 @@ cat elifcheck.sh
  echo "Sorry, you are not allowed here"
  fi
 $ chmod 755 elifcheck.sh $ ./elifcheck.sh
-
-OUTPUT
+```
+## OUTPUT
+```
 Welcome Ram
 Please enjoy your visit
 Welcome Rahim
@@ -819,8 +833,9 @@ Special testing account
 gganesh, Do not forget to logout when you're done
 Sorry, you are not allowed here
 testing compound comparisons
+```
 cat> ifcompound.sh
-
+```
  \#!/bin/bash
  if [ -d $HOME ] && [ -w $HOME ]
  then
@@ -829,12 +844,15 @@ cat> ifcompound.sh
  echo "I cannot write to the file"
  fi
 $ chmod 755 ifcompound.sh $ ./ifcompound.sh
+```
 
-OUTPUT
+## OUTPUT
+```
 The file exists and you can write to it
 using the case command
+```
 cat >casecheck.sh
-
+```
  case $USER in
  Ram | Robert)
  echo "Welcome, $USER"
@@ -849,9 +867,9 @@ cat >casecheck.sh
 $ chmod 755 casecheck.sh
 
 $ ./casecheck.sh
-
+```
 cat > whiletest
-
+```
 #!/bin/bash
 #while command test
 var1=10
@@ -863,8 +881,9 @@ done
 $ chmod 755 whiletest.sh
 
 $ ./whiletest.sh
-
-OUTPUT
+```
+## OUTPUT
+```
 10
 9
 8
@@ -875,8 +894,9 @@ OUTPUT
 3
 2
 1
+```
 cat untiltest.sh
-
+```
  \#using the until command
  var1=100
  until [ $var1 -eq 0 ]
@@ -885,14 +905,17 @@ cat untiltest.sh
  var1=$[ $var1 - 25 ]
  done
 $ chmod 755 untiltest.sh
+```
 
-OUTPUT
+## OUTPUT
+```
 100
 75
 50
 25
+```
 cat forin1.sh
-
+```
  \#!/bin/bash
  \#basic for command
  for test in Alabama Alaska Arizona Arkansas California Colorado
@@ -900,8 +923,10 @@ cat forin1.sh
  echo The next state is $test
  done
 $ chmod 755 forin1.sh $ ./forin1.sh
+```
 
-OUTPUT
+## OUTPUT
+```
 The next state is Alabama The next state is Alaska The next state is Arizona The next state is Arkansas The next state is California The next state is Colorado cat forin2.sh
 
  \#!/bin/bash
@@ -916,7 +941,9 @@ The next state is Alabama The next state is Alaska The next state is Arizona The
  word:I
  word:dont know if thisll
  word:work
+```
  cat forin3.sh
+```
  \#!/bin/bash
  \# another example of how not to use the for command
  for test in I don\'t know if "this'll" work
@@ -924,7 +951,10 @@ The next state is Alabama The next state is Alaska The next state is Arizona The
  echo "word:$test"
  done
  $ ./forin3.sh
- OUTPUT
+```
+
+ ## OUTPUT
+```
  word:I
  word:don't
  word:know
@@ -947,7 +977,10 @@ The next state is Alabama The next state is Alaska The next state is Arizona The
  Adilabad
  Bhadrachalam
  Khammam
- OUTPUT
+```
+
+ ## OUTPUT
+```
  Visit beautiful Hyderabad
  Visit beautiful Alampur
  Visit beautiful Basara
@@ -955,8 +988,9 @@ The next state is Alabama The next state is Alaska The next state is Arizona The
  Visit beautiful Adilabad
   Visit beautiful Bhadrachalam
  Visit beautiful Khammam
+```
 cat forctype.sh
-
+```
  #!/bin/bash
  # testing the C-style for loop
  for (( i=1; i <= 5; i++ ))
@@ -964,15 +998,18 @@ cat forctype.sh
  echo "The value of i is $i"
  done
 $ chmod 755 forctype.sh $ ./forctype.sh
+```
 
-OUTPUT
+## OUTPUT
+```
 The value of i is 1
 The value of i is 2
 The value of i is 3
 The value of i is 4
 The value of i is 5
 ```
-cat forctype1.sh 
+
+cat forctype1.sh
 ```bash
 #!/bin/bash
 # multiple variables
@@ -982,7 +1019,8 @@ echo "$a - $b"
 done
 ```
 $ chmod 755 forctype.sh
-$ ./forctype1.sh 
+$ ./forctype1.sh
+```
 ## OUTPUT
 ```
 1 - 5
@@ -991,7 +1029,7 @@ $ ./forctype1.sh
 4 - 2
 5 - 1
 ``` 
-cat forbreak.sh 
+cat forbreak.sh
 ```bash
 #!/bin/bash
 # breaking out of a for loop
@@ -1006,14 +1044,15 @@ done
 echo "The for loop is completed“
 ```
 $ chmod 755 forbreak.sh
-$ ./forbreak.sh 
+$ ./forbreak.sh
+
 ## OUTPUT
 ```
 Iteration number: 1
 Iteration number: 2
 The for loop is completed
 ```
-cat forbreak.sh 
+cat forbreak.sh
 ```bash
 #!/bin/bash
 # breaking out of a for loop
@@ -1168,10 +1207,13 @@ bcdfghj
 ubcdfghj
 ```
 awk -f nc.awk data.dat
-## OUTPUT 
+## OUTPUT
+```
 total characters 75
 Number of Lines are 10
 No of Words count: 10
+```
+
 cat > palindrome.sh
 ```bash
 #num=545
@@ -1207,4 +1249,6 @@ Number is palindrome
 Number is NOT palindrome
 ``` 
 # RESULT:
+```
 The Commands are executed successfully.
+```
