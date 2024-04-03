@@ -311,6 +311,7 @@ sed -e '2s/Ram/Sita/' file23
 sed  '/tom/s/5000/6000/' file23
 ```
 ## OUTPUT
+```
 1001 | Ram | 10000 | HR
 1001 | Ram | 10000 | HR
 1002 | tom | 6000 | Admin
@@ -319,26 +320,34 @@ sed  '/tom/s/5000/6000/' file23
 1004 | Sit | 7000 | Dev
 1003 | Joe | 7000 | Developer
 1001 | Ram | 10000 | HR
+```
 sed -n -e '1,5p' file23
 
-OUTPUT
+## OUTPUT
+```
 1001 | Ram | 10000 | HR
 1001 | Ram | 10000 | HR
 1002 | tom | 5000 | Admin
 1003 | Joe | 7000 | Developer
 1005 | Sam | 5000 | HR
+```
 sed -n -e '2,/Joe/p' file23
-OUTPUT
+## OUTPUT
+```
 1001 | Ram | 10000 | HR
 1002 | tom | 5000 | Admin
 1003 | Joe | 7000 | Developer
+```
 sed -n -e '/tom/,/Joe/p' file23
-OUTPUT
+
+## OUTPUT
+```
 1002 | tom | 5000 | Admin
 1003 | Joe | 7000 | Developer
 seq 10
-
-OUTPUT
+```
+## OUTPUT
+```
 1
 2
 3
@@ -350,6 +359,7 @@ OUTPUT
 9
 10
 seq 10 | sed -n '4,6p'
+```
 
 ## OUTPUT
 ```
@@ -360,16 +370,21 @@ seq 10 | sed -n '4,6p'
 seq 10 | sed -n '2,~4p'
 ````
 ## OUTPUT
+```
 2 3 4 `` seq 3 | sed '2a hello'
+```
 
-OUTPUT
+## OUTPUT
+```
 1
 2
 hello
 3
 seq 2 | sed '2i hello'
+```
 
-OUTPUT
+## OUTPUT
+```
 1
 hello
 2
@@ -378,12 +393,14 @@ seq 10 | sed '2,9c hello'
 1 hello 10
 
 sed -n '2,4{s/^/$/;p}' file23
-OUTPUT
+```
+## OUTPUT
+```
 $1001 | Ram | 10000 | HR
 $1002 | tom | 5000 | Admin
 $1003 | Joe | 7000 | Developer
 sed -n '2,4{s/$/*/;p}' file23
-
+```
 ## OUTPUT
 ```
 1001 | Ram | 10000 | HR*
@@ -391,7 +408,7 @@ sed -n '2,4{s/$/*/;p}' file23
 
 1003 | Joe | 7000 | Developer*
 ```
-#Sorting File content
+## Sorting File content
 cat > file21
 ```
 1001 | Ram | 10000 | HR
@@ -401,7 +418,6 @@ cat > file21
 1004 | Sit |  7000 | Dev
 ``` 
 sort file21
-```
 ## OUTPUT
 ```
 1001 | Ram | 10000 | HR
@@ -420,29 +436,37 @@ cat > file22
 1004 | Sit |  7000 | Dev
 ``` 
 uniq file22
-OUTPUT
+## OUTPUT
+```
 1001 | Ram | 10000 | HR
 1002 | tom | 5000 | Admin
 1003 | Joe | 7000 | Developer
 1005 | Sam | 5000 | HR
 1004 | Sit | 7000 | Dev
+```
 #Using tr command cat file23 | tr [:lower:] [:upper:]
 
 ## OUTPUT
+```
 1001 | RAM | 10000 | HR 1001 | RAM | 10000 | HR 1002 | TOM | 5000 | ADMIN 1003 | JOE | 7000 | DEVELOPER 1005 | SAM | 5000 | HR
 
 1004 | SIT | 7000 | DEV 1003 | JOE | 7000 | DEVELOPER 1001 | RAM | 10000 | HR
+```
 
 cat < urllist.txt
+```
 www. yahoo. com www. google. com www. mrcet.... com ^d
-
+```
 cat > urllist.txt
+```
 www. yahoo. com www. google. com www. mrcet.... com
-
+```
 cat urllist.txt | tr -d ' '
-## OUTPUT
-WWW.yahoo.com WWW.google.com WWW.mrcet.com
 
+## OUTPUT
+```
+WWW.yahoo.com WWW.google.com WWW.mrcet.com
+```
 cat urllist.txt | tr -d ' ' | tr -s '.'
 ## OUTPUT
 ```
@@ -453,10 +477,11 @@ WWW.mrcet.com
 tar -cvf backup.tar *
 ```
 ## OUTPUT
+```
 bench.py file1 file11 file2 file21 file22 file23 hello.c hello.js newfile readme.txt urllist.txt mkdir backupdir
 
 mv backup.tar backupdir tar -tvf backup.tar
-
+```
 ## OUTPUT
 ```-rw-r--r-- user/group            
 drwxr-xr-x user/group            -rw-r--r-- user/group       -rw-r--r-- user/group       
