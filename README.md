@@ -42,14 +42,16 @@ s.n. dasgupta
 cat < file1
 
 ## OUTPUT
+```
 chanchal singhvi
 c.k. shukla
 s.n. dasgupta
 sumit chakrobarty
-
+```
 cat < file2
 ```
 ## OUTPUT
+```
 anil aggarwal
 barun sengupta
 c.k. shukla
@@ -204,11 +206,14 @@ egrep -w 'Hello|hello' newfile
 ## OUTPUT
 ```
 Hello world hello world
-
+```
 egrep -w '(H|h)ello' newfile 
 ## Output
+```
 Hello world hello world `` egrep -w '(H|h)ell[a-z]' newfile
+```
 ## OUTPUT
+```
 Hello world
 hello world
 ```
